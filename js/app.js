@@ -9,7 +9,19 @@ const displayPhone = phones =>{
    
     const phoneContainer = document.getElementById("phone-container");
     phoneContainer.innerHTML = "";
+phones = phones.slice(0,3);
+
+// no found phone 
+const noPhone = document.getElementById("no-phone");
+if (phones.length === 0) {
+  noPhone.classList.remove('d-none');
+} 
+else {
+  noPhone.classList.add('d-none');
+}
+
     phones.forEach(phone => {
+      document.getElementById("search-field").value = "";
         console.log(phone);
         const phoneDiv = document.createElement("div");
         phoneDiv.classList.add("col");
@@ -21,8 +33,9 @@ const displayPhone = phones =>{
           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         </div>
       </div>
-
+     
         `
+     
         phoneContainer.appendChild(phoneDiv);
 
         
@@ -32,10 +45,16 @@ const displayPhone = phones =>{
 
 document.getElementById("btn-search").addEventListener("click" , function(){
      const searchField = document.getElementById("search-field").value;
+     
      const  searchText = searchField ;
      loadPhones(searchText);
     
 })
 
 
-loadPhones()
+
+
+
+// loadPhones();
+
+
