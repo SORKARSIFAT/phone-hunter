@@ -9,7 +9,7 @@ const displayPhone = phones =>{
    
     const phoneContainer = document.getElementById("phone-container");
     phoneContainer.innerHTML = "";
-phones = phones.slice(0,12);
+phones = phones.slice(0,10);
 
 // no found phone 
 const noPhones = document.getElementById("no-phone");
@@ -49,6 +49,7 @@ toggleSpinner(true);
      
      const  searchText = searchField ;
      loadPhones(searchText);
+     
     
 })
 
@@ -58,7 +59,7 @@ if(isLoading){
   loaderSection.classList.remove('d-none');
 }
 else{
-  loaderSection.classList.add('d-none');
+  loaderSection.classList.add('d-none'); 
 }
 }
 
